@@ -1,4 +1,7 @@
 streamlit
+langchain_experimental
+pandas
+cohere
 streamlit-chat
 streamlit_chat 
 langchain
