@@ -1,0 +1,10 @@
+import streamlit as st
+from streamlit_chat import chat
+ 
+@st.cache(allow_output_mutation=True)
+def get_chat():
+    return chat()
+ 
+chat = get_chat()
+
+  chat.add_message("Bonjour, comment puis-je vous aider aujourd'hui ?", "bot")
