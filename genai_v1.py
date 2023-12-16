@@ -11,9 +11,7 @@ Original file is located at
 
 import pandas as pd
 
-df= pd.read_csv('/content/data_v_1.csv')
-
-df.head()
+df= pd.read_csv('data_v_1.csv')
 
 df.isna().sum()
 #df.shape
@@ -38,23 +36,26 @@ df.dtypes
 
 """# Gen AI Part: with Cohere Command Nightly Model"""
 
-!pip show langchain
 
-!pip install langchain_experimental
 
 from langchain_experimental.agents import create_csv_agent
 from langchain.llms import Cohere
 
-!pip install cohere
 
 agent = create_csv_agent(Cohere(temperature=0, cohere_api_key="sMtMgxOL4fxZtpW0OOFtLFraoAXCsq0FXYwoV0Xi", model = 'command-nightly'),
                          '/content/data_v_1.csv',
                          verbose=True)
 
-agent
 
 #agent.cohere.llm_chain.prompt.template
 
-#My prompt
-agent.run("what are the three products that morocco should invest in and export to china?")
+# initialize the callback handler with a container to write to
+from langchain.callbacks import StreamlitCallbackHandler
+import streamlit as st
 
+if prompt := st.chat_input():
+    st.chat_message("user").write(prompt)
+    with st.chat_message("assistant"):
+        st_callback = StreamlitCallbackHandler(st.container())
+        response = agent.run(prompt, callbacks=[st_callback])
+        st.write(response)
