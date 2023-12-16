@@ -8,8 +8,15 @@ Original file is located at
 
 # EDA
 """
-
+import streamlit as st
 import pandas as pd
+from langchain.chat_models import ChatOpenAI
+from langchain.agents import create_pandas_dataframe_agent
+from langchain.agents.agent_types import AgentType
+
+# Page title
+st.set_page_config(page_title='🦜🔗 Elite Finance')
+st.title('🦜🔗Elite Finance')
 
 df= pd.read_csv('data_v_1.csv')
 
