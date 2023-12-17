@@ -1,10 +1,6 @@
 streamlit
 langchain_experimental
-pandas
-tabulate
 cohere
-langchain.callbacks
 streamlit-chat
-streamlit_chat 
 langchain
 
