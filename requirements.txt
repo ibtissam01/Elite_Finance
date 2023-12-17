@@ -3,4 +3,5 @@ langchain_experimental
 cohere
 streamlit-chat
 langchain
+tabulate
 
