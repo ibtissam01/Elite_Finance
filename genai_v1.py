@@ -25,7 +25,7 @@ from langchain.llms import Cohere
 
 
 agent = create_csv_agent(Cohere(temperature=0, cohere_api_key="sMtMgxOL4fxZtpW0OOFtLFraoAXCsq0FXYwoV0Xi", model = 'command-nightly'),
-                         '/content/ECI_Product_Dataset.csv',
+                         'ECI_Product_Dataset.csv',
                          verbose=True)
 
 
