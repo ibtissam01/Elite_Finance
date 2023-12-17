@@ -18,29 +18,6 @@ from langchain.agents.agent_types import AgentType
 st.set_page_config(page_title='🦜🔗 Elite Finance')
 st.title('🦜🔗Elite Finance')
 
-df= pd.read_csv('data_v_1.csv')
-
-df.isna().sum()
-#df.shape
-#df.dtypes
-
-# Drop rows with missing values in the Product column
-df = df.dropna(subset=['Product'])
-
-# Fill in missing values in the ECI Score column
-df['ECI Score'] = df['ECI Score'].fillna(0)
-
-# Convert the Export Country column to string dtype
-df['Export Country'] = df['Export Country'].astype(str)
-
-df = pd.melt(df, id_vars=['Product'], var_name='Export Country', value_name='ECI Score')
-
-print(df)
-
-df.isna().sum()
-
-df.dtypes
-
 """# Gen AI Part: with Cohere Command Nightly Model"""
 
 
@@ -50,7 +27,7 @@ from langchain.llms import Cohere
 
 
 agent = create_csv_agent(Cohere(temperature=0, cohere_api_key="sMtMgxOL4fxZtpW0OOFtLFraoAXCsq0FXYwoV0Xi", model = 'command-nightly'),
-                         '/content/data_v_1.csv',
+                         '/content/ECI_Product_Dataset.csv',
                          verbose=True)
 
 
