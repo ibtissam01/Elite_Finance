@@ -16,7 +16,7 @@ from langchain.chat_models import ChatOpenAI
 st.set_page_config(page_title='🦜🔗 Elite Finance')
 st.title('🦜🔗Elite Finance')
 
-"""# Gen AI Part: with Cohere Command Nightly Model"""
+"""# Gen AI : Elite Finance"""
 
 
 
