@@ -7,10 +7,10 @@ st.set_page_config(page_title=' Elite Finance')
 
 import streamlit as st
 # Set the title in blue color and large size
-st.markdown('<h1 style="color:blue;font-size:40px;">EliteGenera Finance</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="color:blue;font-size:40px;">📈EliteGenera Finance</h1>', unsafe_allow_html=True)
 
 # Set the heading in green color and medium size
-st.markdown('<h1 style="color:blue;font-size:32px;">Exports diversification for Morocco</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="color:blue;font-size:32px;">🌍Exports diversification for Morocco</h1>', unsafe_allow_html=True)
 
 from langchain_experimental.agents import create_csv_agent
 from langchain.llms import Cohere
