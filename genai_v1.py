@@ -3,10 +3,10 @@ import pandas as pd
 from langchain.chat_models import ChatOpenAI
 
 # Page title
-st.set_page_config(page_title='🦜🔗 Elite Finance')
-st.title('🦜🔗Elite Finance')
+st.set_page_config(page_title=' Elite Finance')
+st.title('EliteGenera Finance')
 
-"""# Gen AI : Elite Finance"""
+"""# Gen AI : Exports diversification for Morocco"""
 
 from langchain_experimental.agents import create_csv_agent
 from langchain.llms import Cohere
