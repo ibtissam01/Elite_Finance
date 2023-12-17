@@ -8,7 +8,7 @@ st.title('<h1 style="color:blue;font-size:32px;">EliteGenera Finance</h1>')
 
 """# Gen AI : Exports diversification for Morocco"""
 
-import streamlit as st*
+import streamlit as st
 # Set the title in blue color and large size
 st.markdown('<h1 style="color:blue;font-size:32px;">EliteGenera Finance</h1>', unsafe_allow_html=True)
 
