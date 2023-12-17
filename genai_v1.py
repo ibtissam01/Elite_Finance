@@ -8,6 +8,12 @@ st.title('EliteGenera Finance')
 
 """# Gen AI : Exports diversification for Morocco"""
 
+# Set the title in blue color
+st.markdown('<span style="color:blue;font-size:32px;">EliteGenera Finance</span>', unsafe_allow_html=True)
+
+# Set the heading in green color
+st.markdown('<span style="color:green;font-size:24px;"># Gen AI: Exports diversification for Morocco</span>', unsafe_allow_html=True)
+
 from langchain_experimental.agents import create_csv_agent
 from langchain.llms import Cohere
 
