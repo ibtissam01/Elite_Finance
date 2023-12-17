@@ -4,4 +4,3 @@ cohere
 streamlit-chat
 langchain
 tabulate
-functools
