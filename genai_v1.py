@@ -14,7 +14,8 @@ import streamlit as st
 st.markdown('<h1 style="color:blue;">EliteGenera Finance</h1>', unsafe_allow_html=True)
 
 # Set the heading in green color and medium size
-st.markdown('<h2 style="color:green;">Gen AI: Exports diversification for Morocco</h2>', unsafe_allow_html=True)
+st.markdown('<h2 style="color:green;"> #Gen AI: Exports diversification for Morocco</h2>', unsafe_allow_html=True)
+
 from langchain_experimental.agents import create_csv_agent
 from langchain.llms import Cohere
 
