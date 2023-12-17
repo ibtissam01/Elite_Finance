@@ -34,7 +34,7 @@ agent = create_csv_agent(Cohere(temperature=0, cohere_api_key="sMtMgxOL4fxZtpW0O
 # initialize the callback handler with a container to write to
 import streamlit as st
 
-if prompt := st.chat_input():
+if prompt := st.chat_input("Enter your question", value="What is the product that Morocco should invest in and export to France?"):
     st.chat_message("user").write(prompt)
     with st.chat_message("assistant"):
         response = agent.run(prompt)
