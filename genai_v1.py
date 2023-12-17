@@ -32,10 +32,26 @@ agent = create_csv_agent(Cohere(temperature=0, cohere_api_key="sMtMgxOL4fxZtpW0O
 #agent.cohere.llm_chain.prompt.template
 
 # initialize the callback handler with a container to write to
-import streamlit as st
 
+import functools
+
+# Define a cache for the expensive computations
+@functools.lru_cache(maxsize=None)
+def cache_agent_response(prompt, response):
+    # Cache the response based on the prompt
+    return response
+    
 if prompt := st.chat_input("Enter your question", value="What is the product that Morocco should invest in and export to France?"):
     st.chat_message("user").write(prompt)
     with st.chat_message("assistant"):
-        response = agent.run(prompt)
+        # Check if the result is already cached
+        cached_response = cache_agent_response(prompt, None)
+        if cached_response is not None:
+            response = cached_response
+        else:
+            # Perform the expensive computation and cache the result
+            response = agent.run(prompt)
+            cache_agent_response(prompt, response)
+
         st.write(response)
+
