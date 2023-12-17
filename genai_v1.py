@@ -41,7 +41,7 @@ def cache_agent_response(prompt, response):
     # Cache the response based on the prompt
     return response
     
-if prompt := st.chat_input("Enter your question", value="What is the product that Morocco should invest in and export to France?"):
+if prompt := st.chat_input("Enter your question"):
     st.chat_message("user").write(prompt)
     with st.chat_message("assistant"):
         # Check if the result is already cached
